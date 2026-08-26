@@ -20,6 +20,8 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           enable-cache: true
+          version: "0.12.4"
+          download-from-astral-mirror: false
       - run: uv sync --group dev
       - run: uv run pytest --cov=llama_index.tools.sprites --cov-report=term-missing
       - run: uv run ruff check .

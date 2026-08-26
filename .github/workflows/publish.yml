@@ -18,6 +18,8 @@ jobs:
         with:
           python-version: "3.13"
           enable-cache: true
+          version: "0.12.4"
+          download-from-astral-mirror: false
       - name: Verify tag matches package version
         run: |
           package_version="$(uv version --short)"
