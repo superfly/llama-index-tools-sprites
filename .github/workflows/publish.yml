@@ -18,6 +18,10 @@ jobs:
         with:
           python-version: "3.13"
           enable-cache: true
+      - name: Verify tag matches package version
+        run: |
+          package_version="$(uv version --short)"
+          test "$GITHUB_REF_NAME" = "v$package_version"
       - run: uv build
       - uses: actions/upload-artifact@v4
         with:

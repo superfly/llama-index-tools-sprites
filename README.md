@@ -56,7 +56,7 @@ asyncio.run(main())
 ```
 
 A runnable version is available in
-[`examples/sprites_agent.py`](examples/sprites_agent.py).
+[`examples/sprites_agent.py`](https://github.com/superfly/llama-index-tools-sprites/blob/main/examples/sprites_agent.py).
 
 ## Direct usage
 
@@ -122,6 +122,13 @@ runs one command, and removes it in a `finally` block:
 ```bash
 uv run python scripts/smoke_test.py
 ```
+
+## Release
+
+Releases use PyPI Trusted Publishing. Update the version in `pyproject.toml`,
+merge to `main`, and push a matching version tag such as `v0.1.0`. The publish
+workflow builds the distributions in an unprivileged job and grants an OIDC
+token only to the PyPI publishing job.
 
 ## License
 
